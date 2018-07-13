@@ -548,7 +548,7 @@ export default {
       }
 
       let selection = this.$refs.input.selectionStart
-      let direction = newVal.length - oldVal.length
+      let direction = (newVal !== null ? newVal.length : 0) - oldVal.length
       selection = this._getInputMaskSelection(selection, direction, this.maskValue(newVal))
       this.lastDirection = direction
       this.$emit('input', this.maskValue(newVal))
